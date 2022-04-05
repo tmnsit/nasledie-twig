@@ -1,0 +1,61 @@
+<!-- form itself -->
+{% if arResult.isFormNote == 'Y' %}
+    <h2 class="h2 mb-1">{{ getLocMessage('FORM_SUCCESS_MSG')|raw }}</h2>
+{% else %}
+    <form action="{{ arParams.SCRIPT_PATH }}"
+          data-ajax-form-to="#{{ uniqueId }}Form"
+          id="{{ uniqueId }}Form"
+          method="POST"
+          enctype="multipart/form-data"
+          data-json-content="false">
+
+        {{ arResult['~FORM_HEADER']|raw }}
+
+        <div class="feedback-form__inner">
+
+            <h2 class="h2 mb-1">{{ arResult.FORM_TITLE }}</h2>
+            <p class="mb-3">{{ getLocMessage('FILL_THE_FORM')|raw }}</p>
+            <div class="feedback-form-row">
+                {% for k, question in arResult.QUESTIONS %}
+                    <div class="feedback-form-col w-100">
+                        <input class="feedback-form__input {{ question.IS_ERROR == 'Y' ? 'has-error' }}"
+                               id="{{ uniqueId }}_{{ question.NAME }}"
+                               data-input="{{ k }}"
+                               name="{{ question.NAME }}"
+                               placeholder="{{ question['~CAPTION'] }}"
+                               value="{{ question.VALUE }}"
+                               type="{{ question.TYPE }}">
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="feedback-form-row mb-4 mb-sm-2">
+                <div class="feedback-form-col">
+                    <div class="custom-control custom-checkbox">
+                        <input class="custom-control-input"
+                               id="{{ uniqueId }}Privacy"
+                               name="{{ uniqueId }}Privacy"
+                               value="Y"
+                               type="checkbox"
+
+                               required
+                               oninvalid="this.setCustomValidity('{{ getLocMessage('PLEASE_ACCEPT_PRIVACY_POLICY') }}')"
+                               oninput="this.setCustomValidity('')"
+
+                                {{ privacyChecked ? 'checked' }}>
+                        <label class="custom-control-label" for="{{ uniqueId }}Privacy">
+                            {{ getLocMessage('I_ACCEPT_PRIVACY_POLICY')|raw }}
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="feedback-form-row">
+                <div class="feedback-form-col">
+                    <button type="submit" class="btn btn-blue">{{ arResult.arForm.BUTTON }}</button>
+                </div>
+            </div>
+
+        </div>
+
+    </form>
+{% endif %}

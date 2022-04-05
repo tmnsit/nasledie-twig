@@ -1,0 +1,9 @@
+<div class="j-load-more-items">
+    {% view '&card-story-list' %}
+</div>
+
+<div class="mt-48 wrap-r-1">
+    {% view '&pagination-layout' with {
+        pagination_layout: card_story_list.pagination_layout
+    } %}
+</div>

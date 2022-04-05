@@ -1,0 +1,153 @@
+# Исключаем настройки PHPStorm, мы в нём работаем
+/.idea/
+
+# Исключаем папку /bitrix кроме некоторых подпапок
+# !/bitrix
+/bitrix/*
+
+# оставляем печатные формы интернет-магазина
+# !/bitrix/admin/
+# /bitrix/admin/*
+# !/bitrix/admin/reports/
+
+# оставляем нестандартные компоненты
+# !/bitrix/components/
+# /bitrix/components/bitrix/
+
+# сохраняем весь php_interface за редкими исключениями
+# !/bitrix/php_interface/
+# /bitrix/php_interface/dbconn.ph*
+# /bitrix/php_interface/after_connect*
+# /bitrix/php_interface/logs/
+
+# сохраняем шаблоны сайта
+# !/bitrix/templates/
+
+# исключаем логи
+/local/php_interface/logs/
+/local/logs/
+
+# исключаем загружаемые файлы
+/upload/
+
+# front-end
+/codenails/
+
+# различные системные папки и файлы хостингов и операционных систем
+/cgi-bin/
+/awstats/
+/webstat/
+.DS_Store
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+
+# исключаем все текстовые и подобные ресурсы (на нашей практике они всегда излишни)
+*.txt
+*.log
+*.css.map
+
+# архивы, включая многотомные
+*.zip
+*.zip*
+*.tar
+*.tar*
+*.enc
+*.enc*
+*.gz
+*.gz*
+*.tgz
+*.tgz*
+*.sql
+*.rar
+.hg
+.ftpconfig
+*.doc
+*.docx
+*.pdf
+*.rtf
+*.xls
+*.xlsx
+*.ppt
+*.pptx
+*.psd
+*.psb
+*.sketch
+*.htaccess
+*.htaccess.restore
+core.*
+
+# однако храним robots.txt — он нужен
+!/robots.txt
+
+# composer
+composer.phar
+composer.*
+/local/vendor/
+/vendor/
+
+# исключаем всякое от node.js
+node_modules
+bower_components
+.grunt
+.npm
+.env
+
+# и логи xhprof напоследок
+/xhprof/logs
+
+/_local/
+
+
+
+/local/projectname.tools/
+/.idea
+/bitrix
+/upload
+/local/php_interface/include/constants.php
+/local/php_interface/data/*
+/local/php_interface/log
+
+/local/templates/.default/frontend
+
+#/local/modules
+/local/modules/demo.adminhelper
+/local/modules/uplab.tools
+/local/modules/uplab.core
+/local/modules/uplab.editor
+/local/modules/uplab.editorblocks
+/local/modules/digitalwand.admin_helper
+/local/modules/sprint.migration
+/local/modules/projectname.tools
+
+/includes/cookie.php
+/includes/terms-of-use.php
+
+/.htaccess
+
+/webstat
+web.config
+yandex*.txt
+google*.html
+#cmsmagazine*.txt
+.DS_Store
+
+node_modules/
+*.lock
+*-lock.json
+mix-manifest.json
+mix.js.map
+
+_dev.*
+
+vendor/
+
+sitemap*.xml
+
+/auth/
+/pub/
+.access.php
+
+
+

@@ -1,0 +1,17 @@
+{% if hero %}
+	{% if hero.show_big_hero %}
+		{% view '&hero-contacts' with {
+			hero: hero
+		} %}		
+	{% else %}
+		{% if hero.show_story_hero %}
+			{% view '&hero-story' with {
+				hero: hero
+			} %}
+		{% else %}
+			{% view '&hero-default' with {
+				hero: hero
+			} %}
+		{% endif %}
+	{% endif %}
+{% endif %}

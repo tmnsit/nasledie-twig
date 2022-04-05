@@ -1,0 +1,5 @@
+{% for block_character_data in block_characters  %}		
+	{% view '&block-character' with {
+		block_character: block_character_data
+	} %}
+{% endfor %}

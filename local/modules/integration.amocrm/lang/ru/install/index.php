@@ -1,0 +1,5 @@
+<?php
+$MESS["MODULE_NAME"] = "Интеграция с AmoCRM";
+$MESS["MODULE_DESCRIPTION"] = "";
+$MESS["MODULE_PARTNER_NAME"] = "";
+$MESS["MODULE_PARTNER_URI"] = "";

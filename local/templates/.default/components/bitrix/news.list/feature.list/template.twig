@@ -1,0 +1,13 @@
+{% if feature_list %}	
+	{% if feature_list.background_color %}
+		{% view template_name with {
+			list: feature_list,
+			slider: feature_list
+		} %}
+	{% else %}
+		{% view template_name with {
+			list: feature_list,
+			slider: feature_list
+		}%}
+	{% endif %}
+{% endif %}

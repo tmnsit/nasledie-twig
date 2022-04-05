@@ -1,0 +1,5 @@
+{% for projectSlider in projectSliders %}
+    {% view '&project-slider' with {
+        item: projectSlider
+    } %}
+{% endfor %}
